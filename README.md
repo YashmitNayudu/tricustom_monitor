@@ -1,2 +1,2 @@
-# tricustom_monitor
-monitoring soft for cloud applications
+# Tricustom Monitoring Bundle
+Contains all the Prometheus and Grafana monitoring stuff that I've come across.
