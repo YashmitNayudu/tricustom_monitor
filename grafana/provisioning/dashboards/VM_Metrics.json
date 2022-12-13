@@ -21,7 +21,7 @@
       }
     ]
   },
-  "description": "Docker host metrics",
+  "description": "VM Core Metrics",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
@@ -1584,7 +1584,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "Docker Host",
+  "title": "VM Metrics",
   "uid": "nKLQj7cVz",
   "version": 3,
   "weekStart": ""
