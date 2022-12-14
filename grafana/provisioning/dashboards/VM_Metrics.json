@@ -25,7 +25,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 2,
+  "id": 1,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -131,6 +131,8 @@
               "type": "special"
             }
           ],
+          "max": 100,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -156,12 +158,10 @@
       },
       "hideTimeOverride": true,
       "id": 13,
+      "interval": "5",
       "links": [],
       "maxDataPoints": 100,
       "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
@@ -170,7 +170,8 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
       },
       "pluginVersion": "9.2.4",
       "targets": [
@@ -179,17 +180,19 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(rate(node_cpu_seconds_total{mode=\"idle\"}[1m])) * 100 / scalar(count(node_cpu_seconds_total{mode=\"user\"}))",
+          "editorMode": "code",
+          "expr": "100 - avg(rate(node_cpu_seconds_total{mode=\"idle\"}[10s]) * 100)",
           "interval": "10s",
           "intervalFactor": 2,
           "legendFormat": "",
+          "range": true,
           "refId": "A",
           "step": 20
         }
       ],
       "timeFrom": "10s",
-      "title": "CPU Idle",
-      "type": "stat"
+      "title": "CPU Usage",
+      "type": "gauge"
     },
     {
       "datasource": {
@@ -1545,7 +1548,7 @@
       }
     }
   ],
-  "refresh": "10s",
+  "refresh": "5s",
   "schemaVersion": 37,
   "style": "dark",
   "tags": [
