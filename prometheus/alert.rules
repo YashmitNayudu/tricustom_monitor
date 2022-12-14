@@ -42,8 +42,8 @@ groups:
 - name: container_health
   rules:
   - alert: mllp_adapter_down
-    expr: absent(container_memory_usage_bytes{name="vivaeve-gcp-mllp-adapter-vivaeve-1"})
-    for: 30s
+    expr: absent(container_cpu_usage_seconds_total{container_label_com_docker_compose_service="gcp-mllp-adapter-vivaeve"})
+    for: 20s
     labels:
       severity: critical
     annotations:
