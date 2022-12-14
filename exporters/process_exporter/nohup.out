@@ -1,0 +1,2 @@
+2022/12/13 08:27:04 Reading metrics from /proc based on "procconf.yml"
+level=info ts=2022-12-13T08:27:04.367Z caller=tls_config.go:195 msg="TLS is disabled." http2=false
